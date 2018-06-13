@@ -145,7 +145,7 @@
 	margin-bottom:170px;
 }
 .arrow span:last-child{
-	vertical-align:middle;
+	//vertical-align:middle;
 }
 
 /**/
@@ -773,4 +773,48 @@ button:hover::before{
 }
 .animation-bg-js.integrating-systems-icon{
 	background-size:100% 100%,29vmin ;
+}
+.arrow {
+	//display:flex;
+}
+
+.arrow span{
+	position:relative;
+	margin-right:-5px;
+	width:10px;
+	height:20px;
+	border:1px solid green;
+	color:transparent;
+}
+.arrow span::before{
+	content:"";
+	width:10px;
+	height:3px;
+	position:absolute;
+	top:50%;
+	left:0;
+	margin-top:-1px;
+	background-color:red;
+}
+.arrow span:last-child::before{
+	content:"";
+	height:13px;
+	width:13px;
+	border:3px solid red;
+	background-color:transparent;
+	position:absolute;
+	top:50%;
+	//left:50px;
+	transform-origin: 100% 0;
+	transform:rotate(45deg);
+	border-left-color:transparent;
+	border-bottom-color:transparent;
+}
+/*
+.arrow span:last-child::after{
+	content:"";
+	height:1px;
+	width:5px;
+	position:absolute;
+	background-color:red;
 }
