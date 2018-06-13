@@ -717,13 +717,29 @@ button:hover::before{
 	.mobile-web-icon,
 	.design-development-icon,
 	.relationship-management-icon{
-		padding-top:90vmin;
+		//padding-top:90vmin;
 	}
 	.our-approach{
 		background-position:-165px -530px;
 	}
 	.latest-news-container{
 		background-position:10px 0;
+	}
+	/**/
+	.old-software h2,
+	.mobile-web h3,
+	.integrating-systems-content h3,
+	.design-development h3,
+	.relationship-management-content h3,
+	.main-container-conversation h2{
+		margin-top:20vmin;
+	}
+	.our-approach h3,
+	.case-study h3{
+		margin-top:35vmin;
+	}
+	.right-arrow-green.arrow{
+		margin-bottom:20vmin;
 	}
 }
 @media screen and (max-width:590px){
@@ -747,6 +763,33 @@ button:hover::before{
 	}
 	
 }
+/**/
+@media screen and (max-width:575px){
+	.integrating-systems-icon,
+	.mobile-web-icon,
+	.design-development-icon,
+	.relationship-management-icon{
+		padding-top:50vmin;
+	}
+	.right-arrow-green.arrow{
+		margin-bottom:10vmin;
+	}
+	.animation-bg{
+		background-size:10vmin ;
+		transition:2s;
+	}
+
+	.animation-bg-js.animation-bg{
+		background-size:40vmin ;
+	}
+	.integrating-systems-icon{
+		background-size:100% 100%,10vmin ;
+	}
+	.animation-bg-js.integrating-systems-icon{
+		background-size:100% 100%,40vmin ;
+	}
+}
+/**/
 @media screen and (max-width:380px){
 	.search-container-title {
 	    margin: 20px 60px 30px 0;
@@ -766,48 +809,66 @@ button:hover::before{
 }
 
 .animation-bg-js.animation-bg{
-	background-size:29vmin ;
+	background-size:30vmin ;
 }
 .integrating-systems-icon{
 	background-size:100% 100%,10vmin ;
 }
 .animation-bg-js.integrating-systems-icon{
-	background-size:100% 100%,29vmin ;
+	background-size:100% 100%,30vmin ;
 }
-.arrow {
-	//display:flex;
-}
+
 
 .arrow span{
 	position:relative;
 	margin-right:-5px;
 	width:10px;
 	height:20px;
-	//border:1px solid green;
 	color:transparent;
 }
-.arrow span::before{
+.down-arrow-white.arrow span::before{
 	content:"";
 	width:10px;
 	height:3px;
 	position:absolute;
 	top:50%;
 	left:0;
-	margin-top:-1px;
-	background-color:red;
+	transform: translate(0,-50%);
+	background-color:#FFFFFF;
 }
-.arrow span:last-child::before{
+.down-arrow-white.arrow span:last-child::before{
 	content:"";
 	height:13px;
 	width:13px;
-	border:3px solid red;
+	border:3px solid #FFFFFF;
 	background-color:transparent;
 	position:absolute;
 	top:50%;
-	//left:50px;
 	transform-origin: 100% 0;
 	transform:rotate(45deg);
 	border-left-color:transparent;
 	border-bottom-color:transparent;
 }
-
+.right-arrow-green.arrow span::before{
+	content:"";
+	width:10px;
+	height:3px;
+	position:absolute;
+	top:50%;
+	left:0;
+	transform: translate(0,-50%);
+	background-color:#33cc33;
+}
+.right-arrow-green.arrow span:last-child::before{
+	content:"";
+	height:13px;
+	width:13px;
+	border:3px solid #33cc33;
+	background-color:transparent;
+	position:absolute;
+	top:50%;
+	transform-origin: 100% 0;
+	transform:rotate(45deg);
+	border-left-color:transparent;
+	border-bottom-color:transparent;
+}
