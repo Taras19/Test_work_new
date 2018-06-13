@@ -783,7 +783,7 @@ button:hover::before{
 	margin-right:-5px;
 	width:10px;
 	height:20px;
-	border:1px solid green;
+	//border:1px solid green;
 	color:transparent;
 }
 .arrow span::before{
@@ -810,11 +810,4 @@ button:hover::before{
 	border-left-color:transparent;
 	border-bottom-color:transparent;
 }
-/*
-.arrow span:last-child::after{
-	content:"";
-	height:1px;
-	width:5px;
-	position:absolute;
-	background-color:red;
-}
+
