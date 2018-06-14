@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	window.addEventListener("load", function(){
 		requestAnimationFrame(getAnimatedTitle);
 		setInterval(changeContentTitle,60000);
+		setInterval(animateShakeIcon,5000);
 		requestAnimationFrame(animationArrow);
 		requestAnimationFrame(animationBg);
 	});
@@ -40,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	window.addEventListener("resize", function(){
 		requestAnimationFrame(changeProgres);
 	})
+
 	/* open,close search +*/ 
 	const searchItemTop = document.querySelector(".item-aside__search");
 	const searchItemBottom = document.querySelector(".nav-bottom-link-search");
@@ -119,7 +121,6 @@ document.addEventListener("DOMContentLoaded", function(){
 							  "Old software costing you time and money? - 3"];
 		if(index < listQuestion.length){
 			animatedTitle.innerHTML = listQuestion[index];
-			console.log(index);
 			++index;
 		} else{ 
 			index = 0;
@@ -154,7 +155,8 @@ document.addEventListener("DOMContentLoaded", function(){
 			elem.children[s].classList.remove("flash");
 		}
 	}
-	/**/
+
+	/* animation background-size */
 	const listElementWithBg = document.querySelectorAll(".animation-bg");
 	function animationBg(){
 		let windowHeight = document.documentElement.clientHeight;
@@ -167,7 +169,8 @@ document.addEventListener("DOMContentLoaded", function(){
 			 }
 		}
 	}
-	/* scroll-bar, progres*/
+
+	/* scroll-bar, progres */
 	const progres = document.querySelector(".progres");
 	function changeProgres(){
 		let windowHeight = document.documentElement.clientHeight;
@@ -184,5 +187,14 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 	}
+
+	/* animation icon for form Start a conversation and Our insights & latest news*/
+	let shakeIconList = document.querySelectorAll(".shake-icon-js");
+	function animateShakeIcon(){
+		for(let i = 0 ; i < shakeIconList.length;  i++){
+			shakeIconList[i].classList.toggle("shake");
+		}
+	}
+	
 	
 });
