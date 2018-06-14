@@ -32,9 +32,15 @@ document.addEventListener("DOMContentLoaded", function(){
 		requestAnimationFrame(animationArrow);
 		/**/
 		requestAnimationFrame(animationBg);
+		/**/
+		requestAnimationFrame(changeProgres);
 	});
 
-	/* open,close search +*/
+	/* resize window*/
+	window.addEventListener("resize", function(){
+		requestAnimationFrame(changeProgres);
+	})
+	/* open,close search +*/ 
 	const searchItemTop = document.querySelector(".item-aside__search");
 	const searchItemBottom = document.querySelector(".nav-bottom-link-search");
 	const searchContainer = document.querySelector(".search-container");
@@ -160,6 +166,23 @@ document.addEventListener("DOMContentLoaded", function(){
 				listElementWithBg[i].classList.remove("animation-bg-js");
 			 }
 		}
+	}
+	/* scroll-bar, progres*/
+	const progres = document.querySelector(".progres");
+	function changeProgres(){
+		let windowHeight = document.documentElement.clientHeight;
+		let navTopWidth = document.querySelector(".nav-top").clientWidth;
+		let bodyHeight = Math.max(
+			  document.body.scrollHeight, document.documentElement.scrollHeight,
+			  document.body.offsetHeight, document.documentElement.offsetHeight,
+			  document.body.clientHeight, document.documentElement.clientHeight
+			);
+		let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		bodyHeigh = bodyHeight - windowHeight;
+		let percentScroll = (scrollTop/(bodyHeigh/100));
+		progres.style.width = (navTopWidth / 100) * percentScroll + "px";
+
+
 	}
 	
 });

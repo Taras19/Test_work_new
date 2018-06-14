@@ -9,6 +9,7 @@
 }
 .nav-top{
 	display:flex;
+	position:relative;
 	background-color:#333333;
 	width:100%;
 	//color:#ffffff;
@@ -323,6 +324,7 @@ textarea{
 }
 .list-letter option{
 	display:flex;
+	position:relative;
 	//border:1px solid red;
 	align-items:center;
 	justify-content:center;
@@ -570,6 +572,40 @@ button:hover::before{
 	width:100%;
 }
 /**/
+.list-letter option{
+	overflow:hidden;
+	transition:.5s;
+}
+.list-letter option::before{
+	content:"";
+	position:absolute;
+	width:0;
+	background:rgba(51,51,51,.5);
+	left:0;
+	top:0;
+	bottom:0;
+	transition:all .5s;
+}
+option:hover{
+	border-radius:5px;
+}
+option:hover::before{
+	width:100%;
+}
+/**/
+.scroll-bar{
+	position:absolute;
+	width:100%;
+	left:0;
+	top:calc(100% - 3px);
+}
+.progres{
+	width:0;
+	height:3px;
+	background-color:rgba(212, 41, 41, 0.7);
+}
+/**/
+
 @media screen and (min-width:1500px){
 	.relationship-management{
 		background-position:calc(-1007px + 45vw) -60px;
@@ -601,6 +637,9 @@ button:hover::before{
 	}
 	.nav-top-open{
 		left:0;
+	}
+	.scroll-bar{
+		top:0;
 	}
 	.logo{
 		width:auto;
