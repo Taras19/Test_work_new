@@ -4,7 +4,7 @@
 		url(../img/o-bg.png)  #FFCC33;
 	background-repeat:no-repeat, no-repeat;
 	background-position:calc(-712px + 32vw) -200px , 33vw bottom;
-	background-size:auto auto,67vw 80%;
+	background-size:auto auto,67vw;
 }
 .nav-top{
 	display:flex;
@@ -136,7 +136,7 @@
 	background-image:url("../img/old-software-bg.png");
 	background-repeat:no-repeat;
 	background-position:33vw 0;
-	background-size:67vw 100%;
+	background-size:67vw;
 }
 .old-software .animated-title{
 	font-size:32px;
@@ -236,7 +236,7 @@
 	background:url("../img/our-approach-bg.png") no-repeat -70px -530px;
 }
 .case-study{
-	background:url("../img/case-study-bg.png") no-repeat left top/100% 100%;
+	background:url("../img/case-study-bg.png") no-repeat left top/cover;
 }
 .our-approach h3,
 .case-study h3{

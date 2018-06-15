@@ -104,9 +104,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	/* animation title*/
 	function getAnimatedTitle(){
 		let windowHeight = document.documentElement.clientHeight;
-		//console.log(windowHeight);
 		let coorAnimatedTitle = animatedTitle.getBoundingClientRect();
-		//console.log(coorAnimatedTitle.top);
 		if( coorAnimatedTitle.top >= 0 && coorAnimatedTitle.top <= windowHeight){
 			animatedTitle.classList.add("animated-title__show");
 		} else{animatedTitle.classList.remove("animated-title__show");}
