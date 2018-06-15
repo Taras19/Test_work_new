@@ -42,10 +42,12 @@
 	display:flex;
 	justify-content:flex-end;
 }
-.logo a{
-	background:url("../img/logo.png") no-repeat center;
-	text-decoration:none;
-	padding:15px;
+.logo a {
+    background: url("../img/spritesheet.png") no-repeat -83px -730px /300px;
+    text-decoration: none;
+    width: 35px;
+    height: 40px;
+    align-self: center;
 }
 .menu-top{
 	display:flex;
@@ -65,16 +67,16 @@
 }
 .menu-top .item-aside{
 	padding:15px 25px;
-	color:transparent;
+	width: 59px;
 }
 .menu-top .item-aside__chat{
-	background:url("../img/chat-icon.png") no-repeat center;
+	background: url("../img/spritesheet.png") no-repeat -70px -72px/310px;
 }
 .menu-top .item-aside__search{
-	background:url("../img/search-icon.png") no-repeat center;
+	background: url("../img/spritesheet.png") no-repeat -55px -1223px/260px;
 }
 .menu-top .item-aside__info{
-	background:url("../img/info-icon.png") no-repeat center;
+	background: url("../img/spritesheet.png") no-repeat -45px -426px;
 }
 .menu-top a:hover,
 .nav-bottom a:hover{
@@ -272,7 +274,8 @@
 	left:100%;
 	width:80px;
 	height:70px;
-	background:url("../img/conversation-tittle-icon.png") no-repeat center/100%;
+	background: url("../img/spritesheet.png") no-repeat -55px -185px/205px;
+
 }
 form[name="conversation"]{
 	display:flex;
@@ -320,7 +323,7 @@ textarea{
 	color:#FFFFFF;
 	padding:10px 105px 10px 35px;
 	outline:none;
-	background:url("../img/send-conversation-bg.png") no-repeat 130px center #33CC33;
+	background: url("../img/spritesheet.png") no-repeat 65px -1315px #33CC33;
 	font-size:20px;
 	font-weight:bold;
 	line-height:24px;
@@ -350,9 +353,9 @@ textarea{
 }
 .latest-news-icon{
 	min-height:64px;
-	margin-top:20px;
-	background:url("../img/news-logo.png") no-repeat center/contain;
-
+	margin:20px auto;
+	background:url("../img/spritesheet.png") no-repeat -60px -842px/215px;
+	width:100px;
 }
 .latest-news-container{
 	background:url("../img/latest-news-container-bg.jpg") no-repeat 90px 20px/100% 100%;
@@ -374,9 +377,10 @@ textarea{
 	background-color:#333333;
 }
 .nav-bottom-icon{
-	height:62px;
-	margin-top:70px;
-	background:url("../img/nav-bottom-icon.png") no-repeat center/contain;
+	height:70px;
+	width:70px;
+	margin:70px auto 0;
+	background:url("../img/spritesheet.png") no-repeat -62px -742px/240px;
 }
 .nav-bottom-container{
 	margin:auto;
@@ -404,7 +408,7 @@ textarea{
 }
 .nav-bottom .nav-bottom-link-search{
 	color:transparent;
-	background:url("../img/search-icon.png") no-repeat 15px center;
+	background: url("../img/spritesheet.png") no-repeat -55px -1228px/260px;
 }
 /**/
 footer{
@@ -473,7 +477,7 @@ footer{
 }
 .live-chat-title{
 	padding:10px 0 10px 40px;
-	background:url("../img/chat-icon.png") no-repeat 10px center/20px;
+	background:url("../img/spritesheet.png") no-repeat -60px -57px/250px;
 }
 .live-chat-button{
 	align-self:center;
@@ -513,7 +517,7 @@ footer{
 	border:none;
 }
 .live-chat-submit{
-	background:url("../img/send-conversation-bg.png") no-repeat 65px center/20px #33cc33;
+	background:url("../img/spritesheet.png") no-repeat -9px -1319px #33cc33;
 }
 
 /**/
@@ -724,11 +728,22 @@ label:hover::before{
 	.menu-top li{
 		border-bottom: 1px solid #FFFFFF;
 	}
-	.menu-top a{
+	.menu-top a,
+	.menu-top .item-aside{
 		width:100%;
 	}
+
 	.menu-top .item-aside{
-		background-position:40px center;
+		height:54px;
+	}
+	.menu-top .item-aside__info {
+    	background: url("../img/spritesheet.png") no-repeat -30px -426px;
+	}
+	.menu-top .item-aside__search {
+    	background: url("../img/spritesheet.png") no-repeat -35px -1223px/260px;
+	}
+	.menu-top .item-aside__chat {
+    	background: url("../img/spritesheet.png") no-repeat -52px -72px/310px;
 	}
 	.btn{
 		display:block;
@@ -825,9 +840,7 @@ label:hover::before{
 	.our-approach{
 		background-position:-165px -530px;
 	}
-	.latest-news-container{
-		background-position:10px 0;
-	}
+	
 	/**/
 	.old-software h2,
 	.mobile-web h3,
@@ -856,6 +869,8 @@ label:hover::before{
 	.shake-icon {
 	    width: 50px;
 	    height: 50px;
+	    background-position:-40px -125px;
+	    background-size:140px;
 	}
 	
 }
@@ -883,6 +898,9 @@ label:hover::before{
 	}
 	.animation-bg-js.integrating-systems-icon{
 		background-size:100% 100%,40vmin ;
+	}
+	.latest-news-container{
+		background-position:10px 0;
 	}
 }
 /**/
