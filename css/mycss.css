@@ -917,7 +917,7 @@ label:hover::before{
 
 .animation-bg{
 	background-size:10vmin ;
-	transition:2s;
+	transition:3s;
 }
 
 .animation-bg-js.animation-bg{

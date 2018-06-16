@@ -105,9 +105,15 @@ document.addEventListener("DOMContentLoaded", function(){
 	function getAnimatedTitle(){
 		let windowHeight = document.documentElement.clientHeight;
 		let coorAnimatedTitle = animatedTitle.getBoundingClientRect();
-		if( coorAnimatedTitle.top >= 0 && coorAnimatedTitle.top <= windowHeight){
+		if( coorAnimatedTitle.top >= 0 && coorAnimatedTitle.top <= windowHeight && !animatedTitle.classList.contains("animated-title__show")){
 			animatedTitle.classList.add("animated-title__show");
-		} else{animatedTitle.classList.remove("animated-title__show");}
+		} 
+		else if(coorAnimatedTitle.top >= 0 && coorAnimatedTitle.top >= windowHeight && animatedTitle.classList.contains("animated-title__show")){
+			animatedTitle.classList.remove("animated-title__show");
+		}
+		else if(coorAnimatedTitle.top < -20 && animatedTitle.classList.contains("animated-title__show")){
+			animatedTitle.classList.remove("animated-title__show");
+		}
 	}
 
 	/* change content title */
@@ -133,10 +139,14 @@ document.addEventListener("DOMContentLoaded", function(){
 		let windowHeight = document.documentElement.clientHeight;
 		for(let i = 0; i < listArrow.length; i++ ){
 			let coorArrow = listArrow[i].getBoundingClientRect();
-			if(coorArrow.top >= 0 && coorArrow.top <= windowHeight){
+			if(coorArrow.top >= 0 && coorArrow.top <= windowHeight && !listArrow[i].children[0].classList.contains("flash")){
 				addClass(listArrow[i]);
-			} else{ 
+			} 
+			else if(coorArrow.top >= 0 && coorArrow.top >= windowHeight && listArrow[i].children[0].classList.contains("flash")){ 
 				removeClass(listArrow[i]);
+			 }
+			else if(coorArrow.top < 0 && listArrow[i].children[0].classList.contains("flash")){
+			 	removeClass(listArrow[i]);
 			 }
 		}
 		
@@ -160,9 +170,11 @@ document.addEventListener("DOMContentLoaded", function(){
 		let windowHeight = document.documentElement.clientHeight;
 		for(let i = 0; i < listElementWithBg.length; i++ ){
 			let coorArrow = listElementWithBg[i].getBoundingClientRect();
-			if((coorArrow.top >= 0 && coorArrow.top <= windowHeight) || (coorArrow.bottom >= 0 && coorArrow.bottom <= windowHeight)){
+			if((coorArrow.top >= 0 && coorArrow.top <= windowHeight && !listElementWithBg[i].classList.contains("animation-bg-js")) 
+				|| (coorArrow.bottom >= 0 && coorArrow.bottom <= windowHeight && !listElementWithBg[i].classList.contains("animation-bg-js"))){
 				listElementWithBg[i].classList.add("animation-bg-js");
-			} else{ 
+			} 
+			else if((coorArrow.top > windowHeight || coorArrow.bottom < 0) && listElementWithBg[i].classList.contains("animation-bg-js")){ 
 				listElementWithBg[i].classList.remove("animation-bg-js");
 			 }
 		}
